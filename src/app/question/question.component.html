@@ -11,14 +11,20 @@
   </div>
   <hr>
   <div class="row">
-    <div
-      *ngFor="let answer of question?.answers"
-      class="col-md-6"
-    >
-    {{ answer }}
-    </div>
-  </div>
-  <hr>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ng-container
+        *ngFor="let answer of question?.answers"
+      >
+        <div class="col-md-6">
+          <input
+
+          type="radio"
+          formControlName="options" [value]="answer">
+          {{ answer }}
+        </div>
+      </ng-container>
+      <div class="col-md-12"><br></div>
+
   <div class="row">
     <div class="col-md-4">
       <button
@@ -35,9 +41,13 @@
         class="btn btn-primary"
         *ngIf="question?.nextQuestionId !== -1"
         [routerLink]="['/test',question?.nextQuestionId]"
+        [disabled]="!form.valid"
         >
         Następne pytanie
       </button>
     </div>
   </div>
+    </form>
+  </div>
+
 </div>
