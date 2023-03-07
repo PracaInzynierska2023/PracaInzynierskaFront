@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        Pytanie {{ question?.id }}
+      </h3>
+      <p>
+        {{ question?.question }}
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div
+      *ngFor="let answer of question?.answers"
+      class="col-md-6"
+    >
+    {{ answer }}
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <button
+        *ngIf="question?.previousQuestionId !== -1"
+        class="btn btn-primary"
+        [routerLink]="['/test', question?.previousQuestionId]"
+      >
+        Poprzednie pytanie
+      </button>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button
+        class="btn btn-primary"
+        *ngIf="question?.nextQuestionId !== -1"
+        [routerLink]="['/test',question?.nextQuestionId]"
+        >
+        Następne pytanie
+      </button>
+    </div>
+  </div>
+</div>
