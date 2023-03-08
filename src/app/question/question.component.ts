@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 import { Question } from './question.model';
@@ -13,6 +14,7 @@ import { QuestionService } from './question.service';
 })
 export class QuestionComponent implements OnInit {
   question?: Question;
+  questionsNumber?: number;
   form: FormGroup = new FormGroup({
     options: new FormControl('', Validators.required)
   });
@@ -21,11 +23,11 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.question = {...this.questionService.getQuestion(+params['id'])}
+      this.questionsNumber = this.questionService.questionsNumber;
     });
 
     this.form.valueChanges.subscribe(changes => {
       this.question!.userAnswer = changes.options;
-      console.log(this.form.value);
     })
   }
 

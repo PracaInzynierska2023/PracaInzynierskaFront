@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3>
-        Pytanie {{ question?.id }}
-      </h3>
       <p>
-        {{ question?.question }}
+        Pytanie {{ (question?.id !== undefined) ? question!.id + 1 : '?'}} z {{ questionsNumber }}
       </p>
+      <h3>
+        {{ question?.question }}
+      </h3>
     </div>
   </div>
   <hr>
@@ -17,7 +17,6 @@
       >
         <div class="col-md-6">
           <input
-
           type="radio"
           formControlName="options" [value]="answer">
           {{ answer }}
@@ -36,10 +35,9 @@
       </button>
     </div>
     <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-4"*ngIf="question?.nextQuestionId !== -1">
       <button
         class="btn btn-primary"
-        *ngIf="question?.nextQuestionId !== -1"
         [routerLink]="['/test',question?.nextQuestionId]"
         [disabled]="!form.valid"
         >
