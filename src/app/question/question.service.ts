@@ -1,23 +1,46 @@
-import { Injectable } from '@angular/core'
-import { Question } from './question.model'
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map, Observable, tap } from 'rxjs';
 
+import { Question } from './question.model';
+
+const QUESTIONS_URL = 'https://pracainzynierska2023-c3b84-default-rtdb.europe-west1.firebasedatabase.app/questions.json';
 
 @Injectable({providedIn: 'root'})
 export class QuestionService {
-  questions: Question[] =
-    [
-      new Question(0, 'Wybierz plec', ['K', 'M'], -1, 1),
-      new Question(1, 'Wybierz kolor włosów', ['blond', 'brunet'], 0, 2),
-      new Question(2, 'Wybierz wzrost', ['160-170', '170-180', '180-190'], 1, 3),
-      new Question(3, 'Wybierz karnacje', ['jasna', 'ciemna'], 2, 4),
-      new Question(4, 'Wybierz Kolor Oczu', ['niebieski', 'zielony', 'brązowy', 'piwny'], 3, -1),
-    ]
+  questions?: Question[];
+  questionsNumber?: number;
+
+  constructor(private http: HttpClient) {}
 
   getQuestions(): Question[] {
-    return this.questions.slice();
+    return this.questions!.slice();
   }
 
   getQuestion(id: number): Question {
-    return this.questions.slice()[id];
+    return this.questions!.slice()[id];
+  }
+
+  getQuestionsNumber(): void {
+    this.http.get<Question[]>(QUESTIONS_URL).pipe(
+      tap(
+        (questions) => {
+          this.questionsNumber = questions.length;
+        }
+      )
+    ).subscribe();
+  }
+
+  fetchQuestions(): Observable<Question[]> {
+    return this.http.get<Question[]>(QUESTIONS_URL)
+      .pipe(
+        tap(
+          (quests) => {
+            this.questions = quests.map((question) => {
+              return new Question(question.id, question.question, question.answers, question.previousQuestionId, question.nextQuestionId,);
+            })
+          }
+        )
+      )
   }
 }
