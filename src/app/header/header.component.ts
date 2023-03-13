@@ -10,7 +10,6 @@ export class HeaderComponent {
 
   onHamburgerClick():void {
     this.menuOpened = true;
-    console.log('click')
   }
 
   onModalClick(): void {
