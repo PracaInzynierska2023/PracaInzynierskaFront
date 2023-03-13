@@ -1,0 +1,21 @@
+<div class="app-page-main-container app-summary-main-container">
+  <div class="app-summary-text">
+    <h3>Oto Twoje odpowiedzi </h3>
+    <p>Kliknij w jedną ze swoich odpowiedzi aby ją zmienić</p>
+  </div>
+
+  <div class="app-flex-container">
+    <button class="app-button-summary" *ngFor="let answer of usersAnswers; let i = index" [routerLink]="['/test', i.toString() ,'edit']">
+      <p>{{i+1}}. {{ questionService.getQuestion(i).question }}</p>
+      <p>{{ answer }}</p>
+    </button>
+  </div>
+
+  <div class="app-flex-container">
+    <button
+    class="app-button-summary confirm"
+    [routerLink]="['/', 'feedback']"
+    (click)="onEndTestClick()"
+  > Zatwierdź Odpowiedzi</button>
+  </div>
+</div>

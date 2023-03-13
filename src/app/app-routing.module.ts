@@ -6,12 +6,18 @@ import { HomeComponent } from "./home/home.component";
 import { QuestionComponent } from "./question/question.component";
 import { TestComponent } from "./test/test.component";
 import { TestStartComponent } from "./test-start/test-start.component"
+import { SummaryComponent } from "./summary/summary.component";
+import { FeedbackComponent } from "./feedback/feedback.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent,
   },
   {
     path: 'test',
@@ -23,7 +29,15 @@ const routes: Routes = [
         pathMatch: "full",
       },
       {
+        path: 'summary',
+        component: SummaryComponent,
+      },
+      {
         path: ':id',
+        component: QuestionComponent
+      },
+      {
+        path: ':id/edit',
         component: QuestionComponent
       },
     ]

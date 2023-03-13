@@ -10,6 +10,7 @@ const QUESTIONS_URL = 'https://pracainzynierska2023-c3b84-default-rtdb.europe-we
 export class QuestionService {
   questions?: Question[];
   questionsNumber?: number;
+  usersAnswers?: (string | null)[] = ['','','','','','',''];
 
   constructor(private http: HttpClient) {}
 
@@ -19,6 +20,11 @@ export class QuestionService {
 
   getQuestion(id: number): Question {
     return this.questions!.slice()[id];
+  }
+
+  updateUsersAnswers(): void {
+    const usersAnswersHelp = ['','','','','','','']
+    this.usersAnswers = usersAnswersHelp.map((answer, index) => (localStorage.getItem(index.toString())) ? localStorage.getItem(index.toString()) : '')
   }
 
   getQuestionsNumber(): void {

@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+<div class="app-question-main-container">
+  <div class="app-question-container">
+    <div class="app-progress-bar">
       <p>
         Pytanie {{ (question?.id !== undefined) ? question!.id + 1 : '?'}} z {{ questionsNumber }}
       </p>
@@ -8,44 +8,27 @@
         {{ question?.question }}
       </h3>
     </div>
-  </div>
-  <hr>
-  <div class="row">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <ng-container
-        *ngFor="let answer of question?.answers"
-      >
-        <div class="col-md-6">
-          <input
-          type="radio"
-          formControlName="options" [value]="answer">
-          {{ answer }}
+    <div class="app-answers-flex-container">
+      <div class="app-answers-container">
+        <div *ngFor="let answer of question?.answers; trackBy: trackAnswer">
+          <app-answer [editMode]="editMode" [questionId]="question!.id" [nextQuestionId]="question!.nextQuestionId" [text]="answer"></app-answer>
         </div>
-      </ng-container>
-      <div class="col-md-12"><br></div>
-
-  <div class="row">
-    <div class="col-md-4">
+      </div>
+    </div>
       <button
-        *ngIf="question?.previousQuestionId !== -1"
-        class="btn btn-primary"
-        [routerLink]="['/test', question?.previousQuestionId]"
+        class="app-button-primary app-button-back-to-summary"
+       [routerLink]="['/test/summary']"
+       *ngIf="editMode"
       >
-        Poprzednie pytanie
-      </button>
-    </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"*ngIf="question?.nextQuestionId !== -1">
+      Powrót do Podsumowania
+    </button>
       <button
-        class="btn btn-primary"
-        [routerLink]="['/test',question?.nextQuestionId]"
-        [disabled]="!form.valid"
-        >
-        Następne pytanie
+      class="app-button-primary app-button-previous-question"
+      *ngIf="!editMode && question?.previousQuestionId !== -1"
+      [routerLink]="['/test', question?.previousQuestionId]"
+      >
+      Poprzednie pytanie
       </button>
-    </div>
-  </div>
-    </form>
-  </div>
+</div>
 
 </div>
