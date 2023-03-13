@@ -11,13 +11,12 @@ export class TestComponent implements OnInit{
   constructor(private questionsService: QuestionService) {}
 
   ngOnInit(): void {
-      console.log('im in testcomponent ngOnInit');
       this.questionsService.getQuestionsNumber();
       this.questionsService.fetchQuestions().subscribe(
         () => {
           setTimeout(() => {
             this.loading = false;
-          },2000)
+          },1000)
         }
       );
   }

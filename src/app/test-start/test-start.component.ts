@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-start.component.scss']
 })
 export class TestStartComponent {
+  currentQuestionId = localStorage.getItem('currentQuestionId');
+  testStarted = this.currentQuestionId ? true : false;
 
+  onResetTest():void {
+    localStorage.clear();
+  }
 }

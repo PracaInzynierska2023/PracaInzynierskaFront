@@ -1,2 +1,6 @@
-<div *ngIf="loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-<router-outlet *ngIf="!loading"></router-outlet>
+<div class="app-page-main-container">
+  <div class="app-spinner" *ngIf="loading">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  </div>
+  <router-outlet *ngIf="!loading"></router-outlet>
+</div>

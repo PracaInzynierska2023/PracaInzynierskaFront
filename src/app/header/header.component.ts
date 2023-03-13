@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  menuOpened: boolean = false;
+
+  onHamburgerClick():void {
+    this.menuOpened = true;
+    console.log('click')
+  }
+
+  onModalClick(): void {
+    this.menuOpened = false;
+  }
 
 }

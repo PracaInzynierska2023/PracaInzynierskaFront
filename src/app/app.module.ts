@@ -12,6 +12,9 @@ import { ContactComponent } from './contact/contact.component';
 import { QuestionComponent } from './question/question.component';
 import { TestComponent } from './test/test.component';
 import { TestStartComponent } from './test-start/test-start.component';
+import { AnswerComponent } from './question/answer/answer.component';
+import { SummaryComponent } from './summary/summary.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
@@ -24,7 +27,10 @@ import { TestStartComponent } from './test-start/test-start.component';
     ContactComponent,
     QuestionComponent,
     TestComponent,
-    TestStartComponent
+    TestStartComponent,
+    AnswerComponent,
+    SummaryComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
