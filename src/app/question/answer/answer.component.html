@@ -1,0 +1,8 @@
+<button
+  class="app-answer-primary"
+  [class]="(checked) ? 'app-answer-primary-checked' : ''"
+  [routerLink]="routerLinkArray"
+  (click)="onAnswerClick()"
+  >
+  {{ text }}
+</button>

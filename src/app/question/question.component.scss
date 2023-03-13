@@ -1,0 +1,46 @@
+@import '../../sass/variables';
+
+.app-question-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.app-question-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.app-answers-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-answers-container {
+  width: 34rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  justify-items: center;
+}
+
+.app-progress-bar {
+  margin-bottom: 20px;
+}
+
+.app-button-previous-question {
+  padding: 0;
+  margin-top: 4rem;
+  width: 15rem;
+  height: 3.5rem;
+}
+
+.app-button-back-to-summary {
+  margin-top: 4rem;
+  padding:0;
+  height: 3.5rem;
+  width: 20rem;
+}

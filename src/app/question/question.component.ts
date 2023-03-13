@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-
 
 import { Question } from './question.model';
 import { QuestionService } from './question.service';
@@ -12,26 +9,24 @@ import { QuestionService } from './question.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent implements OnInit{
   question?: Question;
   questionsNumber?: number;
-  form: FormGroup = new FormGroup({
-    options: new FormControl('', Validators.required)
-  });
+  editMode: boolean = false;
+  routerLinkArray = ['/test'];
   constructor(private route: ActivatedRoute, private questionService: QuestionService) {}
 
   ngOnInit(): void {
+    const regex = new RegExp('edit')
+    this.editMode = regex.test(this.route.snapshot.url.toString());
     this.route.params.subscribe((params) => {
-      this.question = {...this.questionService.getQuestion(+params['id'])}
+      this.question = this.questionService.getQuestion(+params['id'])
       this.questionsNumber = this.questionService.questionsNumber;
+      this.routerLinkArray[1] = ((this.question.nextQuestionId !== -1) ? this.question.nextQuestionId.toString() : '0');
     });
-
-    this.form.valueChanges.subscribe(changes => {
-      this.question!.userAnswer = changes.options;
-    })
   }
 
-  onSubmit():void {
-    this.form.reset();
+  trackAnswer(index: number, answer: string) {
+    return new Date().getTime();
   }
 }
