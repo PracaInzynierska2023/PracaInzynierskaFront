@@ -1,5 +1,14 @@
 @import '../../sass/variables';
 
+
+.test-container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: $container-default-max-width;
+
+  padding: $container-default-padding;
+}
+
 .app-spinner {
   display: flex;
   justify-content: center;
@@ -17,7 +26,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: $accent-color;
+  background: $secondary-color;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
