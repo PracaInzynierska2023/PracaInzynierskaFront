@@ -1,6 +1,27 @@
+@import '../../sass/variables';
 
-.app-buttons-container {
+.btns-container {
+  margin-top:2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  background-color: $secondary-color;
+  color:gray;
+  font-weight: 600;
+  box-shadow: 0px 0px 5px 0px $secondary-dark-color;
+
+  transition: scale 500ms ease-out 0ms;
+}
+
+@media (pointer: fine) or (pointer: none) {
+  .btn:hover {
+    outline: 2px solid $secondary-dark-color;
+    scale: 103%;
+  }
 }

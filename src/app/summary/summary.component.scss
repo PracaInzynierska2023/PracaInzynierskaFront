@@ -1,68 +1,33 @@
 @import '../../sass/variables';
 
-.app-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.summary-container {
+  padding: $container-default-padding;
 }
 
-.app-summary-main-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.ans-container {
+  margin-top: 2rem;
 }
 
-.app-flex-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+.btn {
+  margin-top: 2.5rem;
+  background-color: $secondary-color;
+  color:gray;
+  font-weight: 600;
+  box-shadow: 0px 0px 5px 0px $secondary-dark-color;
 
-.app-summary-text {
-  width: 80vw;
-  max-width: 40rem;
-}
-
-.app-button-summary {
-  border: none;
-  padding: 5px;
-  width: 80vw;
-  max-width: 40rem;
-  height: 8rem;
-  background-color: $accent-contrast-color;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  box-shadow: 0px 0px 3px 1px $accent-color;
+  transition: scale 500ms ease-out 0ms;
 }
 
 @media (pointer: fine) or (pointer: none) {
-  .app-button-summary:hover {
-    background-color: $complementary-background-color;
-    border-radius: 1rem;
-    color:white;
-    box-shadow: 0px 0px 10px 1px $accent-color;
+  .btn:hover {
+    outline: 2px solid $secondary-dark-color;
+    scale: 103%;
   }
-
 }
 
-.app-button-summary p {
+.btn.btn-ans {
+  margin-top: 0.5rem;
+  font-weight: normal;
   text-align: left;
-}
-
-.confirm {
-  width: 80vw;
-  max-width: 40rem;
-  margin-top: 20px;
-  background-color: $complementary-background-color;
-}
-
-@media (pointer: fine) or (pointer: none) {
-  .confirm:hover {
-    background-color: $accent-color;
-    color:white;
-    font-weight: bolder;
-  }
-
+  height: fit-content;
 }

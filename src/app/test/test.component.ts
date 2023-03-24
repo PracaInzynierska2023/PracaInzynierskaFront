@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { QuestionService } from '../question/question.service';
 
 @Component({
@@ -12,12 +13,6 @@ export class TestComponent implements OnInit{
 
   ngOnInit(): void {
       this.questionsService.getQuestionsNumber();
-      this.questionsService.fetchQuestions().subscribe(
-        () => {
-          setTimeout(() => {
-            this.loading = false;
-          },1000)
-        }
-      );
+      this.questionsService.fetchQuestions().subscribe(() => { this.loading = false });
   }
 }

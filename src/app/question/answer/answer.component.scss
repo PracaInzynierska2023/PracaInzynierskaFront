@@ -1,0 +1,28 @@
+@import '../../../sass/variables';
+
+.ans {
+  min-width: 10rem;
+  min-height: 10rem;
+  max-width: 20rem;
+  max-height: 20rem;
+}
+
+.ans {
+  border:none;
+  background-color: $secondary-color;
+  color:gray;
+  box-shadow: 0px 0px 5px 0px $secondary-dark-color;
+  transition: scale 500ms ease-out 0ms;
+  border-radius: 5px;
+}
+
+@media (pointer: fine) or (pointer: none) {
+  .ans:hover {
+    outline: 2px solid $secondary-dark-color;
+    scale: 105%;
+  }
+}
+
+.ans.checked {
+  outline: 2px solid $secondary-dark-color;
+}

@@ -1,47 +1,48 @@
-<div class="app-page-main-container">
-  <div
-  *ngIf="!testStarted"
->
-<p>
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
-</p>
-<p>
-  Na koniec Testu znajdzie się podsumowanie na którym będziesz mieć możliwość sprawdzenia swoich odpowiedzi oraz ich zmiany
-</p>
-</div>
-<div
-  *ngIf="testStarted"
->
-<p>
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
-</p>
-<p>
-  Wygląda na to że przerwałeś ostatnią próbę rozwiązywania testu, możesz kontynuować ostatnią próbę lub rozpocząć test od nowa
-</p>
-</div>
-<div class="app-buttons-container">
-<button
-  *ngIf="!testStarted"
-  class="app-button-primary"
-  [routerLink]="'0'"
->
-  Pierwsze Pytanie
-</button>
-<button
-  *ngIf="testStarted"
-  class="app-button-primary"
-  [routerLink]="'0'"
-  (click)="onResetTest()"
->
-  Rozpocznij Test Od Nowa
-</button>
-<button
-  *ngIf="testStarted"
-  class="app-button-primary"
-  [routerLink]="currentQuestionId"
->
-  Kontynuuj ostatnie podejście
-</button>
-</div>
+<div class="full-width-flex-container">
+  <div class="test-start-container">
 
+    <div *ngIf="!testStarted">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
+      </p>
+      <p>
+        Na koniec Testu znajdzie się podsumowanie na którym będziesz mieć możliwość sprawdzenia swoich odpowiedzi oraz ich zmiany
+      </p>
+    </div>
+
+    <div *ngIf="testStarted">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
+      </p>
+      <p>
+        Wygląda na to że przerwałeś ostatnią próbę rozwiązywania testu, możesz kontynuować ostatnią próbę lub rozpocząć test od nowa
+      </p>
+    </div>
+
+    <div class="btns-container">
+
+      <button
+        *ngIf="!testStarted"
+        class="btn"
+        [routerLink]="'0'">
+        Pierwsze Pytanie
+      </button>
+
+      <button
+        *ngIf="testStarted"
+        class="btn"
+        [routerLink]="'0'"
+        (click)="onResetTest()">
+        Rozpocznij Test Od Nowa
+      </button>
+
+      <button
+        *ngIf="testStarted"
+        class="btn"
+        [routerLink]="currentQuestionId">
+        Kontynuuj ostatnie podejście
+      </button>
+
+    </div>
+  </div>
 </div>

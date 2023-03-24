@@ -1,6 +1,11 @@
-<div class="app-page-main-container">
-  <div class="app-spinner" *ngIf="loading">
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div class="full-width-flex-container">
+  <div class="test-container">
+
+    <div class="app-spinner" *ngIf="loading">
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <router-outlet *ngIf="!loading"></router-outlet>
+
   </div>
-  <router-outlet *ngIf="!loading"></router-outlet>
 </div>
