@@ -1,34 +1,39 @@
-<div class="app-question-main-container">
-  <div class="app-question-container">
-    <div class="app-progress-bar">
-      <p>
-        Pytanie {{ (question?.id !== undefined) ? question!.id + 1 : '?'}} z {{ questionsNumber }}
-      </p>
-      <h3>
-        {{ question?.question }}
-      </h3>
-    </div>
-    <div class="app-answers-flex-container">
-      <div class="app-answers-container">
-        <div *ngFor="let answer of question?.answers; trackBy: trackAnswer">
-          <app-answer [editMode]="editMode" [questionId]="question!.id" [nextQuestionId]="question!.nextQuestionId" [text]="answer"></app-answer>
+<div class="full-width-flex-container">
+  <div class="question-container">
+
+      <div class="app-progress-bar">
+        <p>
+          Pytanie {{ (question?.id !== undefined) ? question!.id + 1 : '?'}} z {{ questionsNumber }}
+        </p>
+        <h3>
+          {{ question?.question }}
+        </h3>
+      </div>
+
+      <div class="app-answers-flex-container">
+        <div class="app-answers-container">
+
+          <div *ngFor="let answer of question?.answers; trackBy: trackAnswer">
+            <app-answer [editMode]="editMode" [questionId]="question!.id" [nextQuestionId]="question!.nextQuestionId" [text]="answer"></app-answer>
+          </div>
+
         </div>
       </div>
-    </div>
+
       <button
-        class="app-button-primary app-button-back-to-summary"
-       [routerLink]="['/test/summary']"
-       *ngIf="editMode"
-      >
-      Powrót do Podsumowania
-    </button>
-      <button
-      class="app-button-primary app-button-previous-question"
-      *ngIf="!editMode && question?.previousQuestionId !== -1"
-      [routerLink]="['/test', question?.previousQuestionId]"
-      >
-      Poprzednie pytanie
+        class="btn btn-back-summary"
+        [routerLink]="['/test/summary']"
+        *ngIf="editMode">
+        Powrót do Podsumowania
       </button>
+
+      <button
+        class="btn btn-prev-quest"
+        *ngIf="!editMode && question?.previousQuestionId !== -1"
+        [routerLink]="['/test', question?.previousQuestionId]">
+        Poprzednie pytanie
+      </button>
+
+  </div>
 </div>
 
-</div>
