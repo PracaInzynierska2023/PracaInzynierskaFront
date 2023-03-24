@@ -1,20 +1,61 @@
 @import '../../sass/variables';
 
-.app-header-container {
+.header-container {
   position: fixed;
   top:0;
   left:0;
 
   min-height: 3.5rem;
-  max-height: 5rem;
-  height: 5vh;
-  width: 100%;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
-  background-color: $complementary-background-color;
-  box-shadow: 0px 0px 10px 1px $accent-color;
-  z-index: 50;
+  background-color: $secondary-color;
+  box-shadow: 0px 0px 5px 0px gray;
+  z-index: 100;
+}
+
+.app-logo {
+  color: gray;
+  border:none;
+  background-color: $secondary-color;
+  width: 20%;
+  max-width: 20rem;
+}
+
+.app-hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  max-width: 20rem;
+}
+
+.hamburger-lines {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 2.25rem;
+  width: 2.85rem;
+}
+
+.hamburger-lines .line {
+  display: block;
+
+  height: 0.4rem;
+  width: 100%;
+
+  border-radius: 10px;
+  background: $hamburger-color;
+}
+
+//media query for computers
+@media (pointer: fine) or (pointer: none) {
+  .hamburger-lines:hover .line {
+    background-color: white;
+  }
 }
