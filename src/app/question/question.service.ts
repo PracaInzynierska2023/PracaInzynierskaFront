@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 import { Question } from './question.model';
 
-const QUESTIONS_URL = 'https://pracainzynierska2023-c3b84-default-rtdb.europe-west1.firebasedatabase.app/questions.json';
+const QUESTIONS_URL = 'https://praca-inzynierska-89067-default-rtdb.europe-west1.firebasedatabase.app/questions.json';
 
 @Injectable({providedIn: 'root'})
 export class QuestionService {
