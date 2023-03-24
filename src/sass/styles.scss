@@ -12,33 +12,10 @@
   width:100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
-// .app-page-main-container {
-//   max-width: 90rem;
-//   width: 90vw;
-// }
 
-// //Primary button
-// .app-button-primary {
-//   padding: 10px;
-//   border: none;
-//   border-radius: 2rem;
-//   background-color: $accent-contrast-color;
-//   width: 15rem;
-//   height: 7rem;
-//   margin-bottom: 10px;
-//   box-shadow: 0px 0px 10px 1px $accent-color;
-// }
-
-// @media (pointer: fine) or (pointer: none) {
-//   .app-button-primary:hover {
-//     color: white;
-//     font-size: bold;
-//     background-color: $complementary-background-color;
-//   }
-// }
 
 // //Answer primary
 // .app-answer-primary {
