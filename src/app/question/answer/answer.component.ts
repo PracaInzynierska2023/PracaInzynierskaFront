@@ -11,8 +11,10 @@ export class AnswerComponent implements OnInit {
   @Input() questionId: number = 0;
   @Input() text: string = '';
   @Input() editMode: boolean = false;
+  @Input() ansIndex: number | undefined;
   routerLinkArray = ['/test', ];
   checked: boolean = false;
+  questionsWithImg = new Set([7,8,9,10,11,12,13]);
 
   constructor(private questionService: QuestionService) {}
 
@@ -30,13 +32,13 @@ export class AnswerComponent implements OnInit {
     localStorage.setItem(this.questionId.toString(), this.text);
     this.questionService.usersAnswers![this.questionId] = this.text;
     if(!this.editMode) {
-      if(this.questionId === 6) {
+      if(this.questionId === 13) {
         localStorage.setItem('currentQuestionId', 'summary');
       } else {
         localStorage.setItem('currentQuestionId', (this.questionId + 1).toString())
       }
     }
-
+    console.log(this.routerLinkArray);
   }
 
   isChecked(): boolean {

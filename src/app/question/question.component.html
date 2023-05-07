@@ -13,8 +13,8 @@
       <div class="app-answers-flex-container">
         <div class="app-answers-container">
 
-          <div *ngFor="let answer of question?.answers; trackBy: trackAnswer">
-            <app-answer [editMode]="editMode" [questionId]="question!.id" [nextQuestionId]="question!.nextQuestionId" [text]="answer"></app-answer>
+          <div *ngFor="let answer of question?.answers; trackBy: trackAnswer; let i = index">
+            <app-answer [ansIndex]="i" [editMode]="editMode" [questionId]="question!.id" [nextQuestionId]="question!.nextQuestionId" [text]="answer"></app-answer>
           </div>
 
         </div>

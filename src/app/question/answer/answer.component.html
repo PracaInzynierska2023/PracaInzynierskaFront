@@ -5,4 +5,5 @@
   (click)="onAnswerClick()"
   >
   {{ text }}
+  <img *ngIf="questionsWithImg.has(questionId)" [src]="'../../../assets/'  + questionId +'_' + ansIndex + '.png'" alt="">
 </button>
