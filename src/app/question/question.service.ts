@@ -10,7 +10,7 @@ const QUESTIONS_URL = 'https://praca-inzynierska-89067-default-rtdb.europe-west1
 export class QuestionService {
   questions?: Question[];
   questionsNumber?: number;
-  usersAnswers?: (string | null)[] = ['','','','','','',''];
+  usersAnswers?: (string | null)[] = ['','','','','','','', '','','','','','','','', ''];
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class QuestionService {
   }
 
   updateUsersAnswers(): void {
-    const usersAnswersHelp = ['','','','','','','']
+    const usersAnswersHelp = ['','','','','','','', '','','','','','','','', ''];
     this.usersAnswers = usersAnswersHelp.map((answer, index) => (localStorage.getItem(index.toString())) ? localStorage.getItem(index.toString()) : '')
   }
 
