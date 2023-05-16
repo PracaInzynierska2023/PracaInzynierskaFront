@@ -1,0 +1,153 @@
+@import '../../../sass/variables';
+
+
+.question-container {
+  padding: $container-default-padding;
+  max-width: $container-default-max-width;
+}
+
+.question h3 {
+  min-height: 6rem;
+  margin-bottom: 0;
+  margin-top:0.75rem;
+}
+
+
+.ans {
+  min-width: 12rem;
+  min-height: 12rem;
+  border:none;
+  background-color: white;
+  box-shadow: 0px 0px 3px 0px gray;
+  transition: scale 500ms ease-out 0ms;
+  overflow: hidden;
+
+  font-family: "Poppins";
+}
+
+.checked {
+  box-shadow: 0px 0px 7px 0px black;
+}
+
+.app-answers-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-answers-container {
+  padding: 1rem;
+  padding-top:0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-items: center;
+  margin-bottom: 6.5rem;
+}
+
+.app-progress-bar {
+  margin-bottom: 1.5rem;
+}
+
+
+
+.progress-bar-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+}
+
+.progress-bar-title p {
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.progress-bar-box {
+  border: 1px solid rgba(0, 0, 0, 0.658);
+  height: 1.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.app-progress-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.658);
+  transition: width 400ms ease-in-out ;
+}
+
+.app-progress-bar-1 {
+  width: calc(100% / 14);
+}
+
+.app-progress-bar-2 {
+  width: calc(200% / 14);
+}
+
+.app-progress-bar-3 {
+  width: calc(300% / 14);
+}
+
+.app-progress-bar-4 {
+  width: calc(400% / 14);
+}
+
+.app-progress-bar-5 {
+  width: calc(500% / 14);
+}
+
+.app-progress-bar-6 {
+  width: calc(600% / 14);
+}
+
+.app-progress-bar-7 {
+  width: calc(700% / 14);
+}
+
+.app-progress-bar-8 {
+  width: calc(800% / 14);
+}
+
+.app-progress-bar-9 {
+  width: calc(900% / 14);
+}
+
+.app-progress-bar-10 {
+  width: calc(1000% / 14);
+}
+
+.app-progress-bar-11 {
+  width: calc(1100% / 14);
+}
+
+.app-progress-bar-12 {
+  width: calc(1200% / 14);
+}
+
+.app-progress-bar-13 {
+  width: calc(1300% / 14);
+}
+
+.app-progress-bar-14 {
+  width: calc(1400% / 14);
+}
+
+
+.btns-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+}
+

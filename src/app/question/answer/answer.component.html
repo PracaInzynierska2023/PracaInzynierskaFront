@@ -1,9 +1,0 @@
-<button
-  class="ans"
-  [class]="(checked) ? 'checked' : ''"
-  [routerLink]="routerLinkArray"
-  (click)="onAnswerClick()"
-  >
-  {{ text }}
-  <img *ngIf="questionsWithImg.has(questionId)" [src]="'../../../assets/'  + questionId +'_' + ansIndex + '.png'" alt="">
-</button>

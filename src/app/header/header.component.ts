@@ -5,15 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  menuOpened: boolean = false;
-
-  onHamburgerClick():void {
-    this.menuOpened = true;
-  }
-
-  onModalClick(): void {
-    this.menuOpened = false;
-  }
-
-}
+export class HeaderComponent {}

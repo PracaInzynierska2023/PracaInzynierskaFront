@@ -1,0 +1,26 @@
+@import '../../../sass/variables';
+
+.test-start-container {
+  margin-top: $container-default-top-margin;
+  padding: $container-default-padding;
+  max-width: $container-default-max-width;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 2rem;
+}
+
+.btns-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+}
+
