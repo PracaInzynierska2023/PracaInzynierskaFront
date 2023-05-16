@@ -1,0 +1,22 @@
+<div class="full-width-flex-container">
+  <div class="summary-container">
+
+    <div class="app-summary-text">
+      <h3>Sprawdź swoje odpowiedzi </h3>
+      <p>Kliknij w jedną ze swoich odpowiedzi aby ją zmienić</p>
+    </div>
+
+    <div class="ans-container" *ngFor="let answer of answers; let i = index" (click)="onAnsClick(i)">
+      <h4 *ngIf="questions[i]"> {{ questions[i].question }} </h4>
+      <p> {{ answer.text }} </p>
+    </div>
+
+    <button
+      class="app-btn"
+      (click)="onConfirmClick()"
+      >
+      Zatwierdź Odpowiedzi
+    </button>
+
+  </div>
+</div>

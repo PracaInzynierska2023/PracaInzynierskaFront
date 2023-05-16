@@ -1,28 +1,25 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AboutComponent } from "./about/about.component";
-import { ContactComponent } from "./contact/contact.component";
 import { HomeComponent } from "./home/home.component";
-import { QuestionComponent } from "./question/question.component";
 import { TestComponent } from "./test/test.component";
-import { TestStartComponent } from "./test-start/test-start.component"
-import { SummaryComponent } from "./summary/summary.component";
-import { FeedbackComponent } from "./feedback/feedback.component";
+import { CapsuleComponent } from "./capsule/capsule.component";
+import { TestStartComponent } from "./test/test-start/test-start.component";
+import { QuestionComponent } from "./test/question/question.component";
+import { SummaryComponent } from "./test/summary/summary.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
-  { path: 'feedback', component: FeedbackComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent},
+  { path: 'capsule', component: CapsuleComponent },
   {
     path: 'test',
     component: TestComponent,
     children: [
-      { path: '', component: TestStartComponent, pathMatch: "full" },
-      { path: 'summary', component: SummaryComponent },
-      { path: ':id', component: QuestionComponent },
+      { path: '', redirectTo: 'start', pathMatch: 'full'},
+      { path: 'start', component: TestStartComponent},
+      { path: 'summary', component: SummaryComponent},
+      { path: ':id', component: QuestionComponent},
       { path: ':id/edit', component: QuestionComponent},
     ]
   },

@@ -1,0 +1,74 @@
+<div class="full-width-flex-container">
+  <div class="question-container">
+
+
+    <div class="progress-bar-container" *ngIf="question">
+      <div class="progress-bar-title">
+        <p> {{ question.id <= 6 ? 'Analiza kolorystyczna' : 'Analiza Stylu' }} </p>
+        <p> pytanie {{ question.id + 1}} <span class="z">z</span> 14</p>
+      </div>
+      <div class="progress-bar-box">
+        <div [ngClass]="{
+          'app-progress-bar-1': question.id === 0,
+          'app-progress-bar-2': question.id === 1,
+          'app-progress-bar-3': question.id === 2,
+          'app-progress-bar-4': question.id === 3,
+          'app-progress-bar-5': question.id === 4,
+          'app-progress-bar-6': question.id === 5,
+          'app-progress-bar-7': question.id === 6,
+          'app-progress-bar-8': question.id === 7,
+          'app-progress-bar-9': question.id === 8,
+          'app-progress-bar-10': question.id === 9,
+          'app-progress-bar-11': question.id === 10,
+          'app-progress-bar-12': question.id === 11,
+          'app-progress-bar-13': question.id === 12,
+          'app-progress-bar-14': question.id === 13
+        }" class="app-progress-bar"></div>
+      </div>
+    </div>
+
+      <div class="question">
+        <h3>
+          {{ question?.question }}
+        </h3>
+      </div>
+
+      <div class="app-answers-flex-container">
+        <div class="app-answers-container">
+
+          <div *ngFor="let answer of question?.answers ; let i = index">
+            <button
+              class="ans"
+              (click)="onAnswerClick(answer)"
+              [ngClass]="{'checked': isChecked(answer)}"
+              >
+              {{ answer.text }}
+              <img *ngIf="question!.id >= 7" [src]="'../../../assets/'  + question!.id +'_' + i + '.png'" alt="">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="btns-container" *ngIf="question">
+        <button
+          class="app-btn"
+          [routerLink]="['/test/summary']"
+          *ngIf="editMode"
+          >
+          Powrót do Podsumowania
+        </button>
+
+        <button
+        [routerLink]="['/test', question.id-1]"
+        class="app-btn"
+        *ngIf="!editMode && question.id !== 0"
+        >
+          Poprzednie pytanie
+        </button>
+      </div>
+
+  </div>
+</div>
+

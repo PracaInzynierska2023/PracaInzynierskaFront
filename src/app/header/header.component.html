@@ -1,38 +1,9 @@
 <div class="header-container">
+
   <button
     [routerLink]="'/home'"
     class="app-logo">
-    WikiStyle
+    <img src="../../assets/Wiki's Wear.png" alt="">
   </button>
 
-  <div class="app-hamburger">
-    <div
-      class="hamburger-lines"
-      (click)="onHamburgerClick()">
-      <span class="line line1"></span>
-      <span class="line line2"></span>
-      <span class="line line3"></span>
-    </div>
-  </div>
-
-</div>
-
-<div *ngIf="menuOpened" class="app-menu-modal" (click)="onModalClick()">
-  <button
-    [routerLink]="'/home'"
-    [routerLinkActive]="'active'">
-    Home
-  </button>
-
-  <button
-    [routerLink]="'/about'"
-    [routerLinkActive]="'active'">
-    O nas
-  </button>
-
-  <button
-    [routerLink]="'/contact'"
-    [routerLinkActive]="'active'">
-    Kontakt
-  </button>
 </div>

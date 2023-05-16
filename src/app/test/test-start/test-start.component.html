@@ -3,17 +3,17 @@
 
     <div *ngIf="!testStarted">
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
+        Przed Tobą Seria pytań które, pozwolą nam stworzyć planer dostosowany specjalnie dla Ciebie!
       </p>
       <p>
         Na koniec Testu znajdzie się podsumowanie na którym będziesz mieć możliwość sprawdzenia swoich odpowiedzi oraz ich zmiany
       </p>
+      <p>
+        Gotowa?
+      </p>
     </div>
 
     <div *ngIf="testStarted">
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat dicta expedita ab delectus repellat debitis, ipsam corrupti quod cum ipsum dolor neque doloremque exercitationem, iusto reprehenderit quam aut veritatis!
-      </p>
       <p>
         Wygląda na to że przerwałeś ostatnią próbę rozwiązywania testu, możesz kontynuować ostatnią próbę lub rozpocząć test od nowa
       </p>
@@ -22,24 +22,24 @@
     <div class="btns-container">
 
       <button
+        [routerLink]="['/test', '0']"
         *ngIf="!testStarted"
-        class="btn"
-        [routerLink]="'0'">
+        class="app-btn">
         Pierwsze Pytanie
       </button>
 
       <button
+        [routerLink]="['/test', '0']"
         *ngIf="testStarted"
-        class="btn"
-        [routerLink]="'0'"
+        class="app-btn"
         (click)="onResetTest()">
         Rozpocznij Test Od Nowa
       </button>
 
       <button
+        (click)="onContinueButtonClick()"
         *ngIf="testStarted"
-        class="btn"
-        [routerLink]="currentQuestionId">
+        class="app-btn">
         Kontynuuj ostatnie podejście
       </button>
 

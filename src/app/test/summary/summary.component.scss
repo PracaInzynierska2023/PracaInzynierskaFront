@@ -1,0 +1,25 @@
+@import '../../../sass/variables';
+
+.summary-container {
+  padding: $container-default-padding;
+  max-width: $container-default-max-width;
+}
+
+
+.ans-container {
+  padding: 0.25rem;
+  box-shadow: 0px 0px 5px 0px gray;
+  margin-bottom: 0.75rem;
+}
+
+.ans-container p {
+  font-family: 'Poppins';
+  margin: 0;
+}
+
+.app-btn {
+  margin-bottom: 0;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: none;
+}
