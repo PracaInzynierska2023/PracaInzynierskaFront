@@ -1,4 +1,1 @@
-https://pracainzynierska2023-c3b84.web.app
-
-TODO:
-- http errors handling
+https://praca-inzynierska-89067.web.app
