@@ -57,7 +57,7 @@
           [routerLink]="['/test/summary']"
           *ngIf="editMode"
           >
-          Powrót do Podsumowania
+          {{'Powrót do Podsumowania' | titlecase}}
         </button>
 
         <button
@@ -65,7 +65,7 @@
         class="app-btn"
         *ngIf="!editMode && question.id !== 0"
         >
-          Poprzednie pytanie
+          {{ 'Poprzednie pytanie' | titlecase }}
         </button>
       </div>
 
