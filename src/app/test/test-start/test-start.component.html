@@ -25,7 +25,7 @@
         [routerLink]="['/test', '0']"
         *ngIf="!testStarted"
         class="app-btn">
-        {{'Pierwsze Pytanie' | titlecase}}
+        Pierwsze pytanie
       </button>
 
       <button
@@ -33,14 +33,14 @@
         *ngIf="testStarted"
         class="app-btn"
         (click)="onResetTest()">
-        {{'Rozpocznij Test Od Nowa' | titlecase}}
+      Rozpocznij test od nowa
       </button>
 
       <button
         (click)="onContinueButtonClick()"
         *ngIf="testStarted"
         class="app-btn">
-        {{'Kontynuuj ostatnie podejście'  | titlecase}}
+      Kontynuuj ostatnie podejście
       </button>
 
     </div>
