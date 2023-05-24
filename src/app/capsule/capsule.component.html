@@ -23,7 +23,9 @@
     </div>
 
     <div class="fixed-bottom-container">
-      <button class="app-btn"> Pobierz swój planner </button>
+      <button class="app-btn">
+        <a download [href]="'../../assets/' + color + '_' + style + '.pdf'" (click)="downloadButtonClick()">Pobierz swój planner</a>
+      </button>
     </div>
 
   </div>

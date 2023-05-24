@@ -21,7 +21,7 @@ export class CapsuleComponent implements OnInit{
   styleAnalysis = [
     {id: 'Casual', val:0},
     {id: 'Francuski minimalizm', val:0},
-    {id: 'Klasyczna elegancja ', val:0},
+    {id: 'Klasyczna elegancja', val:0},
     {id: 'Retro nowoczesny', val:0},
     {id: 'Kobiecy glamour', val:0},
   ]
@@ -47,5 +47,9 @@ export class CapsuleComponent implements OnInit{
 
     this.color = this.colorAnalysis.sort((a, b) => b.val - a.val )[0].id;
     this.style = this.styleAnalysis.sort((a, b) => b.val - a.val )[0].id;
+  }
+
+  downloadButtonClick():void {
+    console.log(this.color + '_' + this.style);
   }
 }
