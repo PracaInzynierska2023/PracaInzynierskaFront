@@ -13,17 +13,17 @@ export class CapsuleComponent implements OnInit{
 
   colorAnalysis = [
     {id: 'Zima', val: 0},
-    {id: 'Jesień', val: 0},
+    {id: 'Jesien', val: 0},
     {id: 'Lato', val: 0},
     {id: 'Wiosna', val: 0}
   ]
 
   styleAnalysis = [
     {id: 'Casual', val:0},
-    {id: 'Francuski minimalizm', val:0},
-    {id: 'Klasyczna elegancja', val:0},
-    {id: 'Retro nowoczesny', val:0},
-    {id: 'Kobiecy glamour', val:0},
+    {id: 'Francuski-Minimalizm', val:0},
+    {id: 'Klasyczna-Elegancja', val:0},
+    {id: 'Retro-Nowoczesny', val:0},
+    {id: 'KobiecyGlamour', val:0},
   ]
 
   ngOnInit(): void {
